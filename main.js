@@ -1,14 +1,23 @@
+const initalize = () => {
+    const container = document.querySelector('.container');
+    const title = document.createElement('h1');
+    title.textContent = 'Etch-A-Sketch!';
+    const startBtn = document.createElement('button');
+    startBtn.textContent = 'Start to sketch!';
+    container.appendChild(title);
+    container.appendChild(startBtn);
+
+};
 
 const createGrid = () => {
     const container = document.querySelector('.container');
     const gridContainer = document.createElement('div');
     gridContainer.classList.add('grid-container');
     
-    for (let i = 1; i < 17; i++){
+    for (let i = 1; i < 65; i++){
         const gridItem = document.createElement('div');
         gridItem.classList.add('grid-item');
         gridItem.id = i; 
-        gridItem.textContent = i;
         gridContainer.appendChild(gridItem)
     }
     
@@ -16,7 +25,7 @@ const createGrid = () => {
 };
 
 const onHover = () => {
-    for (let i = 1; i < 17; i++){
+    for (let i = 1; i < 65; i++){
 
         document.getElementById(i).addEventListener('mouseover', (item) => {
             document.getElementById(i).style.backgroundColor = getRandomColor() ;
@@ -32,6 +41,8 @@ const getRandomColor = () => {
     };
     return color;
 };
+
+initalize();
 createGrid();
 onHover();
 
