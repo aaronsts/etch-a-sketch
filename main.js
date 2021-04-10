@@ -2,6 +2,7 @@ const initalize = () => {
     // Create Title and start button
     const container = document.querySelector('.container');
     const title = document.createElement('h1');
+    title.classList.add('title');
     title.textContent = 'Etch-A-Sketch!';
     const startBtn = document.createElement('button');
     startBtn.textContent = 'Start to sketch!';
