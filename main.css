@@ -1,11 +1,12 @@
 body {
     margin: 0;
     padding: 0;
+    height: 100vh;
     background-color: #f8f8f8;
 }
 .container {
-    width: 40%;
-    height: 100%;
+    width: 50%;
+    height: 90vh;
     text-align: center;
     align-items: center;
     margin: 0 auto;
@@ -14,10 +15,13 @@ body {
 .grid-container {
     display: grid;
     place-items: center;
-    width: 100%;
-    grid-template-columns: repeat(8, 12.5%);
-    grid-template-rows: repeat(8, 100px);
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    grid-template-columns: repeat(8, auto);
+    grid-template-rows: repeat(8, auto);
     background-color: rgb(255, 255, 255);
+    border: 5px solid #d1faff;
 }
 
 .grid-item {
