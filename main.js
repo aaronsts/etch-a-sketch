@@ -19,25 +19,27 @@ const createGrid = () => {
     const gridContainer = document.createElement('div');
     gridContainer.classList.add('grid-container');
     console.log(document.querySelector('.grid-container'))
+
     // grid of 64
-    for (let i = 1; i < 65; i++){
+    for (let i = 1; i < 257; i++){
         const gridItem = document.createElement('div');
         gridItem.classList.add('grid-item');
         gridItem.id = i; 
         gridContainer.appendChild(gridItem)
     }
-    
+
     container.appendChild(gridContainer);
     document.getElementById('start').remove();
     onHover();
+    colorPicker();
 };
 
 const onHover = () => {
     // grid of 64
-    for (let i = 1; i < 65; i++){
+    for (let i = 1; i < 257; i++){
 
         document.getElementById(i).addEventListener('mouseover', (item) => {
-            document.getElementById(i).style.backgroundColor = getRandomColor() ;
+            document.getElementById(i).style.backgroundColor = document.getElementById('myColor').value ;
             console.log(item)
         })
     };
@@ -52,5 +54,12 @@ const getRandomColor = () => {
     return color;
 };
 
+const colorPicker = () => {
+    let container = document.querySelector('.container');
+    let picker = document.createElement('input');
+    picker.setAttribute('type', 'color');
+    picker.id = 'myColor';
+    container.appendChild(picker);
+}
 initalize();
 
